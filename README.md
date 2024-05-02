@@ -24,8 +24,29 @@ Finally, run the docker container via the command:
     docker run -d -p 9000:9000 bg-rep
 
 
-### Test
+## Test
 
-There are two sample images inside `images/`. In order to run a background removal on the image `cat.jpg`, run:
+There are two sample images inside `images/`. 
+
+### Sample
+
+<br/>
+Foreground
+
+<img src="images/cat.jpg">
+
+<br/>
+
+Background
+
+<img src="images/background.jpg">
+
+
+In order to run a background removal on the image `cat.jpg`, run:
 
     python test.py
+
+
+### Result
+
+<img src="images/cat_background.png">
