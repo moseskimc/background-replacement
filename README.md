@@ -1,6 +1,6 @@
 # background-replacement
 
-This repo implements a simple deployment of a FastAPI application to change the background of an image. Background replacement is accomplished by creating a segmentation mask of the image foreground using a ResNet-based FCN model followed by background removal and image superimposition.
+This repo implements a simple deployment of a FastAPI application that replaces the background of an image. Background replacement is accomplished by creating a segmentation mask of the image foreground using a ResNet-based FCN model followed by background removal and image superimposition.
 
 ## Docker
 
