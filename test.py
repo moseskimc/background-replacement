@@ -4,6 +4,8 @@ from PIL import Image
 import requests
 import os
 
+from utils import format_single_double_quotes
+
 
 if __name__ == "__main__":
 
@@ -41,17 +43,18 @@ if __name__ == "__main__":
         ("files", input_image)
     ]
 
-    # metadata_dict = {
-    #     "bg": {"filename": background_file_name, "category": background_category},
-    #     "input": {"filename": input_image_file_name, "category": input_image_category}
-    # }
-    # metadata = [
-    #     str(metadata_dict[key]) for key, _ in metadata_dict.items()
-    # ]
-    
-    metadata = ['{"filename": "background.jpg", "category": "background"}',
-                '{"filename": "cat.jpg", "category": "cat"}']
-    
+    metadata_dict = {
+        "bg": {"filename": background_file_name, "category": background_category},
+        "input": {"filename": input_image_file_name, "category": input_image_category}
+    }
+    metadata = [
+        str(metadata_dict[key]) for key, _ in metadata_dict.items()
+    ]
+    metadata = [format_single_double_quotes(item) for item in metadata]
+
+    # metadata = ['{"filename": "background.jpg", "category": "background"}',
+    #             '{"filename": "cat.jpg", "category": "cat"}']
+
     data = {"data": metadata}
 
     # send POST request
