@@ -30,18 +30,26 @@ You can find all sample images in `images/`.
 
 ### Sample
 
-`cat.jpg` is the foreground image whose background we replace with `background.jpg`.
+The foreground of `cat.jpg` is the running cat. We replace the background of `cat.jpg` with `background.jpg` by cropping the center region.
+
+#### Foreground
+
+<img src="images/cat.jpg">
+
+#### Background
+
+<img src="images/background.jpg">
 
 
-|![](images/cat.jpg)<br>Foreground|![](images/background.jpg)<br>Background|
-|:-:|:-:|
+### Script
+
+To run background replacement on `cat.jpg` simply run `test.py` from the project root.
+
+```
+python test.py
+```
 
 ### Results
 
-In order to run a background removal on the image `cat.jpg`, run:
-
-    python test.py
-
-
-
-<img src="images/cat_background.png">
+|![](images/cat.jpg)<br>Before|![](images/cat_background.png)<br>After|
+|:-:|:-:|
