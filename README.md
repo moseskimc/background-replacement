@@ -40,7 +40,7 @@ The foreground of `cat.jpg` is the running cat. We replace the background of `ca
 
 ### Script
 
-To run background replacement on `cat.jpg` simply run `test.py` from the project root.
+To replace background of `cat.jpg` with cat as foreground, run the command below.
 
 ```
 python test.py
