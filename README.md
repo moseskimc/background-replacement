@@ -10,18 +10,21 @@ Using Docker and FastAPI, we deploy a background replacement service on top of a
 
 ### Docker
 
-If you are using Apple Silicon please run the following command:
+If running on Apple silicon please export the following variable in your terminal before building your Docker image.
 
     export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 
-To build the image, run:
-
+1. Build the image
+```bash
     docker build -t bg-rep .
+```
 
-Finally, run the docker container via the command:
-
+2. Run the container
+```bash
     docker run -d -p 9000:9000 bg-rep
+```
+
 
 
 ## Test
