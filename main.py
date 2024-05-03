@@ -40,10 +40,10 @@ app = FastAPI()
 @app.post("/replace_background/")
 async def replace_background_endpoint(
     data: List[ImageMetadata],
-    files: List[UploadFile] = File(...)
+    input_file: UploadFile = File(...),
+    bg_file: UploadFile = File(...)
 ):
 
-    bg_file, input_file = files
     # read in input image
     input_file_content = await input_file.read()
     input_image_pil = Image.open(BytesIO(input_file_content))
@@ -51,7 +51,7 @@ async def replace_background_endpoint(
     bg_file_content = await bg_file.read()
     bg_image_pil = Image.open(BytesIO(bg_file_content))
     # get image category
-    _, image_metadata = data
+    image_metadata, _ = data
     image_category = image_metadata.category
     foreground, _ = remove_background(
         model,
