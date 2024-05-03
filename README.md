@@ -1,14 +1,8 @@
 # background-replacement
 
-This repo is a quick tutorial on how to replace the background of an image using a segmentation model and OpenCV.
+This repo implements a simple deployment of a FastAPI application to change the background of an input image. This background replacement is accomplished by using a ResNet based FCN model followed by image processing operations including background removal and image superimposition.
 
-
-## Deployment
-
-Using Docker and FastAPI, we deploy a background replacement service on top of a pre-trained segmentation torch model called `FCN_ResNet50` and OpenCV.
-
-
-### Docker
+## Docker
 
 If running on Apple silicon please export the following variable in your terminal before building your Docker image.
 
