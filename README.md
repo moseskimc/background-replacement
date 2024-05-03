@@ -26,27 +26,22 @@ Finally, run the docker container via the command:
 
 ## Test
 
-There are two sample images inside `images/`. 
+You can find all sample images in `images/`. 
 
 ### Sample
 
-<br/>
-Foreground
+`cat.jpg` is the foreground image whose background we replace with `background.jpg`.
 
-<img src="images/cat.jpg">
 
-<br/>
+|![](images/cat.jpg)<br>Foreground|![](images/background.jpg)<br>Background|
+|:-:|:-:|
 
-Background
-
-<img src="images/background.jpg">
-
+### Results
 
 In order to run a background removal on the image `cat.jpg`, run:
 
     python test.py
 
 
-### Result
 
 <img src="images/cat_background.png">
