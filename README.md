@@ -40,10 +40,19 @@ The foreground of `cat.jpg` is the running cat. We replace the background of `ca
 
 ### Script
 
-The following code block encapsulates the main function of the script `test.py`, which is to send image and json data as a POST request to the deployed FastAPI server running on Docker. The definition of variables `input_image`, `bg_file`, and `metadata` are omitted for brevity.
+To replace the background of `cat.jpg` with `background.jpg`, run the script `test.py` from the project root directory.
+
+```shell
+python test.py
+```
+
+The following code block encapsulates the main function of the script `test.py`, which is to send image and json data as a POST request to the deployed FastAPI server running on Docker and receive a file buffer corresponding to the new image. The definition of variables `input_image`, `bg_file`, and `metadata` are omitted for brevity.
 
 ```python
 import requests
+
+from PIL import Image
+from io import BytesIO
 
 url = "http://0.0.0.0:9000/replace_background/"
 files = [
@@ -54,13 +63,9 @@ files = [
 data = {"data": metadata}
 
 resp = requests.post(url=url, data=data, files=files)
+img = Image.open(BytesIO(resp.content))
 ```
 
-To replace the background of `cat.jpg` with `background.jpg`, run the script `test.py` from the project root directory.
-
-```shell
-python test.py
-```
 
 ### Results
 
