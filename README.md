@@ -27,7 +27,7 @@ You can find all sample images in `images/`.
 
 ### Sample
 
-The foreground of `cat.jpg` is the running cat. We replace the background of `cat.jpg` with `background.jpg` by cropping the center region.
+The foreground of `cat.jpg` is the running cat. The background of `cat.jpg` is replaced with a crop of `background.jpg`.
 
 #### Foreground
 
