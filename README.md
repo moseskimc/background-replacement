@@ -66,8 +66,5 @@ resp = requests.post(url=url, data=data, files=files)
 img = Image.open(BytesIO(resp.content))
 ```
 
-
-### Results
-
 |![](images/cat.jpg)<br>Before|![](images/cat_background.png)<br>After|
 |:-:|:-:|
